@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三列布局</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            width:100%;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <section id="s1">
+        <style>
+            #s1 {
+                text-align: center;
+            }
+            #s1 .main{
+                width: 100%;
+                height: 300px;
+            }
+            #s1 .main .left{
+                width:14%;
+                height:100%;
+                float: left;
+                background: red;  
+            }
+            #s1 .main .right{
+                width: 14%;
+                height:100%;
+                float:right;
+                background: red;
+            }
+            #s1 .main .content {
+                height:100%;
+                background: blue;
+            }
+        </style>
+        <header>浮动布局实现三列布局</header>
+        <div class="main">
+            <div class="left">我是左边栏</div>
+            <div class="right">我是右边栏</div>
+            <div class="content">我是主内容区</div> 
+        </div>
+    </section>
+    <hr>
+    <section id="s2">
+            <style>
+                #s2 {
+                    text-align: center;
+                }
+                #s2 .main{
+                    position: relative;
+                    width: 100%;
+                    height: 300px;
+                }
+                #s2 .main .left{
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    width:14%;
+                    height:100%;
+                    background: red;  
+                }
+                #s2 .main .right{
+                    position: absolute;
+                    top: 0;
+                    right:0;
+                    width: 14%;
+                    height:100%;
+                    background: red;
+                }
+                #s2 .main .content {
+                    height:100%;
+                    background: blue;
+                    margin:0 14%;
+                }
+            </style>
+            <header>绝对定位布局实现三列布局</header>
+            <div class="main">
+                <div class="left">我是左边栏</div>
+                <div class="content">我是主内容区</div>
+                <div class="right">我是右边栏</div>     
+            </div>
+        </section>
+        <hr>
+        <section id="s3">
+            <style>
+                #s3 {
+                    text-align: center;
+                }
+                #s3 .main{
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                }
+                #s3 .main .left,#s3 .main .right{
+                    width:14%;
+                    height:100%;
+                    background: red;  
+                }
+                #s3 .main .content {
+                    flex: 1;
+                    height:100%;
+                    background: blue;
+                }
+            </style>
+            <header>flex布局实现三列布局</header>
+            <div class="main">
+                <div class="left">我是左边栏</div>
+                <div class="content">我是主内容区</div>
+                <div class="right">我是右边栏</div>     
+            </div>
+        </section>
+        <hr>
+        <section id="s4">
+            <style>
+                #s4 {
+                    text-align: center;
+                }
+                #s4 .main{
+                    width: 100%;
+                    height: 300px;
+                    display: grid;
+                    grid-template-columns: 14% auto 14%;
+                }
+                #s4 .main .left,#s4 .main .right{
+                    height:100%;
+                    background: red;  
+                }
+                #s4 .main .content {
+                    height:100%;
+                    background: blue;
+                }
+            </style>
+            <header>grid布局实现三列布局</header>
+            <div class="main">
+                <div class="left">我是左边栏</div>
+                <div class="content">我是主内容区</div>
+                <div class="right">我是右边栏</div>     
+            </div>
+        </section>
+        <hr>
+        <section id="s5">
+            <style>
+                #s5 {
+                    text-align: center;
+                }
+                #s5 .main{
+                    width: 100%;
+                    height: 300px;
+                    display: table
+                }
+                #s5 .main div{
+                    display: table-cell;
+                }
+                #s5 .main .left,#s5 .main .right{
+                    width: 14%;
+                    height:100%;
+                    background: red;  
+                }
+                #s5 .main .content {
+                    height:100%;
+                    background: blue;
+                }
+            </style>
+            <header>table布局实现三列布局</header>
+            <div class="main">
+                <div class="left">我是左边栏</div>
+                <div class="content">我是主内容区</div>
+                <div class="right">我是右边栏</div>     
+            </div>
+        </section>
+        <hr>
+
+</body>
+</html>
