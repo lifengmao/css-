@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局-flex实现</title>
+    <style>
+        html,body{
+            padding:0;
+            margin: 0;
+            text-align: center;
+            color: #fff;
+        }
+        header,footer{
+            border: 1px solid #333;
+            background: #aaa;
+            text-align: center;
+        }
+        section div{
+            min-height: 130px;
+        }
+        .container{
+            border: 2px solid yellow;
+        }
+        .left,.right{
+            background: green;
+        }
+        .main{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            display: flex;
+        }
+        .main{
+            flex:1;
+        }
+        .left,.right{
+            flex:0 0 220px;
+        }
+        .left{
+            order:-1;
+        }
+        @media (max-width:768px){
+            .container{
+                flex-direction: column;
+            }
+            .left,.right{
+                flex:1;
+            }
+        }
+    </style>
+    <header>圣杯布局flex实现</header>
+    <section class="container">
+        <div class="main">我要被率先渲染</div>
+        <div class="left">左侧边栏</div>
+        <div class="right">右侧边栏</div>
+    </section>
+    <footer>我是页面footer</footer>
+</body>
+</html>

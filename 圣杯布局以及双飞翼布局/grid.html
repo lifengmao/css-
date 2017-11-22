@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局-gird实现</title>
+    <style>
+        html,body{
+            padding:0;
+            margin: 0;
+            text-align: center;
+            color: #fff;
+        }
+        header,footer{
+            border: 1px solid #333;
+            background: #aaa;
+        }
+        section div{
+            min-height: 130px;
+        }
+        .container{
+            border: 2px solid yellow;
+        }
+        .left,.right{
+            background: green;
+        }
+        .main{
+            background: blue;
+        }
+    </style>
+</head>
+<body class="hg">
+    <style>
+        header{
+            grid-area: header;
+        }
+        .main{
+            grid-area: main;
+        }
+        .left{
+            grid-area: nav;
+        }
+        .right{
+            grid-area: ads;
+        }
+        footer{
+            grid-area: footer;
+        }
+        .hg{
+            display: grid;
+            grid-template-areas: "header header header"
+                                 "nav   main   ads"
+                                 "footer footer footer";
+            grid-template-columns: 220px 1fr 220px;
+            grid-template-rows: 100px 1fr 100px;
+            min-height: 100vh;
+        }
+        @media screen and (max-width:768px) {
+            .hg{
+                grid-template-areas: "header""nav""main""ads""footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 50px 1fr 50px 30px;
+            }
+        }
+    </style>
+    <header>圣杯布局grid实现</header>
+        <div class="main">我要被率先渲染</div>
+        <div class="left">左侧边栏</div>
+        <div class="right">右侧边栏</div>
+    <footer>我是页面footer</footer>
+</body>
+</html>
